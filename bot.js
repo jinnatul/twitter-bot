@@ -8,7 +8,7 @@ const config = {
   access_token_secret: process.env.access_token_secret,
 };
 
-const T = new Twit(config);
+const Twitter = new Twit(config);
 
 const retweet = (searchTag) => {
   const params = {
@@ -17,7 +17,7 @@ const retweet = (searchTag) => {
     count: 20,
   };
 
-  T.get('search/tweets', params, (srcErr, srcData, srcRes) => {
+  Twitter.get('search/tweets', params, (srcErr, srcData, srcRes) => {
     const tweets = srcData.statuses;
     if (!srcErr) {
       let tweetIDList = [];
@@ -37,17 +37,27 @@ const retweet = (searchTag) => {
       // Filter unique tweet IDs.
       tweetIDList = tweetIDList.filter((value, index, self) => self.indexOf(value) === index);
 
-      // Post tweet
       tweetIDList.forEach((tweetID) => {
-        T.post('statuses/retweet/:id', { id: tweetID }, (rtErr, rtData, rtRes) => {
+        // Post tweet
+        Twitter.post('statuses/retweet/:id', {
+          id: tweetID,
+        }, (rtErr, rtData, rtRes) => {
           if (!rtErr || rtData) {
-            console.log(rtData);
             console.log(`\n\nRetweeted! ID - ${tweetID}`);
           } else {
             console.log(`\nError... Duplication maybe...  ${tweetID}`);
-            console.log(`Error =  ${rtErr}`);
           }
         });
+
+        // Like a tweet
+        Twitter.post('favorites/create', {
+          id: tweetID,
+        })
+          .then(() => {
+            console.log('Liked tweet successfully!');
+          }).catch(() => {
+            console.log('Already Liked this tweet.');
+          });
       });
     } else {
       console.log(`Error while searching: ${srcErr}`);
@@ -57,4 +67,6 @@ const retweet = (searchTag) => {
 };
 
 // Run every 60 seconds
-setInterval(() => { retweet('#morol'); }, 60000);
+setInterval(() => {
+  retweet('#morol');
+}, 60000);
