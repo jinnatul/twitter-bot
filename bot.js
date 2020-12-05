@@ -1,5 +1,5 @@
-import './config/ImportEnv';
-import Twit from 'twit';
+require('./config/ImportEnv');
+const Twit = require('twit');
 
 const config = {
   consumer_key: process.env.consumer_key,

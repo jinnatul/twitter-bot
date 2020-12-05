@@ -5,8 +5,8 @@
   "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel-node bot.js",
-    "dev": "nodemon bot.js --exec babel-node"
+    "start": "node bot.js",
+    "dev": "nodemon bot.js"
   },
   "repository": {
     "type": "git",
@@ -19,8 +19,6 @@
   },
   "homepage": "https://github.com/jinnatul/twitter-bot#readme",
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "dotenv": "^8.2.0",
     "twit": "^2.2.11",
     "twitter-lite": "^0.14.0"
