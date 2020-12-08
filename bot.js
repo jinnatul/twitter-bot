@@ -14,7 +14,7 @@ const retweet = (searchTag) => {
   const params = {
     q: searchTag,
     result_type: 'mixed',
-    count: 20,
+    count: 50,
   };
 
   Twitter.get('search/tweets', params, (srcErr, srcData, srcRes) => {
@@ -68,5 +68,5 @@ const retweet = (searchTag) => {
 
 // Run every 60 seconds
 setInterval(() => {
-  retweet('#morol');
+  retweet('#javascript OR #nodejs OR #100DaysOfCode');
 }, 60000);
