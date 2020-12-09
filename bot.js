@@ -14,7 +14,7 @@ const retweet = (searchTag) => {
   const params = {
     q: searchTag,
     result_type: 'mixed',
-    count: 50,
+    count: 100,
   };
 
   Twitter.get('search/tweets', params, (srcErr, srcData, srcRes) => {
@@ -38,7 +38,7 @@ const retweet = (searchTag) => {
       tweetIDList = tweetIDList.filter((value, index, self) => self.indexOf(value) === index);
 
       tweetIDList.forEach((tweetID) => {
-        // Post tweet
+        // Retweet
         Twitter.post('statuses/retweet/:id', {
           id: tweetID,
         }, (rtErr, rtData, rtRes) => {
@@ -49,6 +49,7 @@ const retweet = (searchTag) => {
           }
         });
 
+        /*
         // Like a tweet
         Twitter.post('favorites/create', {
           id: tweetID,
@@ -58,6 +59,7 @@ const retweet = (searchTag) => {
           }).catch(() => {
             console.log('Already Liked this tweet.');
           });
+        */
       });
     } else {
       console.log(`Error while searching: ${srcErr}`);
