@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="600" height="650" src="https://user-images.githubusercontent.com/31995155/101985641-9c0f6800-3cb3-11eb-9d48-596eac23378e.jpg">
+  <img width="700" height="650" src="https://user-images.githubusercontent.com/31995155/102304143-eed47280-3f86-11eb-8f8e-e1fc4fdcd69c.jpeg">
 </p>
 
 Our first Twitter bot(nodejs-bot [@morolswediu](https://twitter.com/morolswediu)) that can retweet and like your tweet, 
