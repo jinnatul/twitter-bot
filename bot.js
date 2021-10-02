@@ -70,5 +70,5 @@ const retweet = (searchTag) => {
 
 // Run every 60 seconds
 setInterval(() => {
-  retweet('#javascript OR #nodejs OR #100DaysOfCode');
+  retweet('#javascript OR #nodejs OR #100DaysOfCode OR #NanoSoft');
 }, 60000);
