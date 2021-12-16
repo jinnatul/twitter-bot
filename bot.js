@@ -14,7 +14,7 @@ const retweet = (searchTag) => {
   const params = {
     q: searchTag,
     result_type: 'mixed',
-    count: 100,
+    count: 200,
   };
 
   Twitter.get('search/tweets', params, (srcErr, srcData, srcRes) => {
