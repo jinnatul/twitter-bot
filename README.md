@@ -1,8 +1,8 @@
 <p align="center">
-  <img width="700" height="650" src="https://user-images.githubusercontent.com/31995155/125157893-5f471900-e18f-11eb-9f8c-41c03d09ebcc.jpg">
+  <img width="700" height="650" src="https://user-images.githubusercontent.com/31995155/173243684-cee9d6ca-1883-4157-b81a-09a6a63804f2.jpg">
 </p>
 
-Our first Twitter bot(nodejs-bot [@morolswediu](https://twitter.com/morolswediu)) that can retweet and like your tweet, 
+My first Twitter bot(nodejs-bot [@morolswediu](https://twitter.com/morolswediu)) that can retweet and like your tweet, 
 if you use hashtags
   - `#nodejs` 
   - `#javascript` 
